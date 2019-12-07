@@ -20,6 +20,8 @@ class PaymentController extends Controller
             $redirectUrl = $response->getRedirectUrl();
             echo 'send thanh cong';
             return view('main.create_payment');
+        } else{
+            echo $response->message;
         }
     }
 }
