@@ -18,7 +18,7 @@ class PaymentController extends Controller
         
         if ($response->isRedirect()) {
             $redirectUrl = $response->getRedirectUrl();
-            echo 'send thnah cong';
+            echo 'send thanh cong';
             return view('main.create_payment');
         }
         
