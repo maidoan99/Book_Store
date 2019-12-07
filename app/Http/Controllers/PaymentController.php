@@ -13,7 +13,7 @@ class PaymentController extends Controller
         $config = file_get_contents('../config.json');
         $array = json_decode($config, true);
 
-        include "../common.php";
+        include "../../../resources/views/main/layout/common.php";
 
 
         $endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
