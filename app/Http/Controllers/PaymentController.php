@@ -16,10 +16,9 @@ class PaymentController extends Controller
             'requestId' => 'Mã request id, gợi ý nên xài uuid4',
         ])->send();
         
-        echo 'send thnah cong';
         if ($response->isRedirect()) {
             $redirectUrl = $response->getRedirectUrl();
-            
+            echo 'send thnah cong';
             return view('main.create_payment');
         }
         
