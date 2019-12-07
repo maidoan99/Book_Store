@@ -1,5 +1,5 @@
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header">
         <div class="container">
             <div class="logo-column">
                 <a href="{{route('home')}}" class="navbar-brand">
@@ -18,6 +18,9 @@
                                     <li class="menu-item text-menu">
                                         <a href="{{route('book')}}" ><span>Books</span></a>
                                     </li>
+                                    <li class="menu-item text-menu">
+                                        <a href="{{route('contact')}}" ><span>Contact</span></a>
+                                    </li>
                                     <li class="menu-item">
                                         <a href="{{route('cart')}}" >
                                             <i class="fa fa-shopping-bag"></i>
@@ -30,9 +33,9 @@
                                             <span class="username">doanmai</span>
                                         </a>
                                     </li>
-                                    <li class="menu-item">
+                                    <!-- <li class="menu-item">
                                         <a class="btn btn-outline-primary" href="{{route('login')}}">Login</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
                             <div class="header-search-input menu-skin-dark">

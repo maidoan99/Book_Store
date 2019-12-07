@@ -1,187 +1,90 @@
 @extends('main.layout.index')
 @section('content')
 <div class="container-fluid">
-        <div class="row">
-            <img class="home-page" src="{{asset('img/home-page.jpg')}}" alt="">
+    <div class="row">
+        <img class="home-page" src="{{asset('img/home-page.jpg')}}" alt="">
+    </div>
+    <div class="home-page-layout layout">
+        <div class="title-small">COME AND JOIN THE BOOK STORE</div>
+        <div class="title-lagre">enjoy the silence in our reading room.</div>
+    </div>
+</div>
+
+<div class="container book-section" style="margin-top: 20px">
+    <div class="row book-title">
+        <div class="col-auto mr-auto">
+            <h1 style="margin-left: 30px;">Books</h1>
         </div>
-        <div class="home-page-layout layout">
-            <div class="title-small">COME AND JOIN THE BOOK STORE</div>
-            <div class="title-lagre">enjoy the silence in our reading room.</div>
+        <div class="col-auto float-right">
+            <div class="list-group float-right" id="myList" role="tablist">
+                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#book-details" role="tab">Best Seller</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#reviews" role="tab">Sell</a>
+            </div>
         </div>
     </div>
 
-    <div class="container book-section">
-        <div class="row book-title">
-            <div class="col-auto mr-auto">
-                <h1>Books</h1>
+    <div class="col-lg-12">
+        <div class="tab-content">
+            <div class="tab-pane active" id="book-details" role="tabpanel">
+                <div class="card-group">
+                    @foreach($book as $item)
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <a href="{{route('book-detail',$item->id)}}">
+                                <img class="card-img-top" src="img/{{$item->img}}" alt="Card image cap" height="350px">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="{{route('book-detail')}}">{{$item->name}}</a>
+                                </h4>
+                                <h6 class="card-text author">
+                                    <small class="text-muted">
+                                        <a href="">{{$item->author->name}}</a>
+                                    </small>
+                                </h6>
+                                <h5 class="card-text price">
+                                    @if($item->sale_price == 0)
+                                    <span>${{$item->price}}</span>
+                                    @else
+                                    <span class="old-price">${{$item->price}}</span>
+                                    <span>${{$item->sale_price}}</span>
+                                    @endif
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
-            <div class="col-auto">
-                <ul class="list-group list-group-horizontal float-right">
-                    <li class="list-group-item lgi-active">
-                        <a href="">
-                            <span>BEST SELLER</span>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="">
-                            <span>SELL</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row book-item">
-            <div class="card-group">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="{{route('book-detail')}}">
-                            <img class="card-img-top" src="{{asset('img/bestsell-1.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <span class="onsale">
-                            sale!
-                        </span>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="{{route('book-detail')}}">Spy: A Novel</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">danielle steel</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">
-                                <span class="old-price">$23.00</span>
-                                <span>$20.00</span>
-                            </h5>
+            <div class="tab-pane" id="reviews" role="tabpanel">
+                <div class="card-group">
+                    @foreach($book as $item)
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <a href="{{route('book-detail',$item->id)}}">
+                                <img class="card-img-top" src="img/{{$item->img}}" alt="Card image cap" height="350px">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="{{route('book-detail')}}">{{$item->name}}</a>
+                                </h4>
+                                <h6 class="card-text author">
+                                    <small class="text-muted">
+                                        <a href="">{{$item->author->name}}</a>
+                                    </small>
+                                </h6>
+                                <h5 class="card-text price">
+                                    @if($item->sale_price == 0)
+                                    <span>${{$item->price}}</span>
+                                    @else
+                                    <span class="old-price">${{$item->price}}</span>
+                                    <span>${{$item->sale_price}}</span>
+                                    @endif
+                                </h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-2.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">A Brief History of Time</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">stephen hawking</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$21.51</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-3.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">Eat Fat, Get Thin</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">mark hyman m.d</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$15.39</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-4.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">Say Nothing</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">patrick radden keefe</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$18.87</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-5.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">The Friend</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">sigrid nunez</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$15.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-6.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">Wnter Loon: A Novel</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">susan bernhard</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$11.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-7.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">Born a Crime</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">trevor noah</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$13.49</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
-                        <a href="">
-                            <img class="card-img-top" src="{{asset('img/bestsell-8.jpg')}}" alt="Card image cap" height="350px">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="">Silient Night: A Novel</a>
-                            </h4>
-                            <h6 class="card-text author">
-                                <small class="text-muted">
-                                    <a href="">danielle steel</a>
-                                </small>
-                            </h6>
-                            <h5 class="card-text price">$31.00</h5>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -311,4 +214,4 @@
                     </a> -->
         </div>
     </div>
-@endsection
+    @endsection

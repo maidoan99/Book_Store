@@ -1,23 +1,23 @@
 
-h1 {
+.login h1 {
     font-size: 1.2rem;
     line-height: 1.2;
 }
-h2 {
+.login h2 {
     font-size: 1.125rem !important; 
 }
    
-h1.title {
+.login  h1.title {
     color: black;
     font-family: 'Prata';
     font-weight: 500;
     margin: 1rem 0;
     font-size: 25px;
 }
-.staticBlock ul {
+.login .staticBlock ul {
     padding-left: 1.2rem;
 }
-ul {
+.login ul {
     margin-top: 0;
     margin-bottom: 1rem;
 }
@@ -26,23 +26,34 @@ ul {
     border-color: #642a35 !important;
     border-radius: 0 !important;
 }
-.form-group {
+.login .form-group {
     margin-bottom: 2rem;
 }
-.box {
+  .box {
     background-color: #f0f1ee;
     padding: 1rem;
 }
-.mb-3 {
+.login .mb-3 {
     margin-bottom: 1rem !important;
 }
-.staticBlock {
+.login .staticBlock {
     font-size: 0.875rem !important;
 }
-.staticBlock ul {
+.login .staticBlock ul {
     padding-left: 1.2rem;
 }
-ul {
+.login ul {
     margin-top: 0;
     margin-bottom: 1rem;
+}
+
+input:focus{
+    outline: 0;
+}
+
+.btn-link{
+    color: #642a35;
+}
+.btn-link:hover{
+    color: #642a35;
 }
