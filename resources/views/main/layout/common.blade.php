@@ -1,4 +1,4 @@
-<?php
+
 function execPostRequest($url, $data)
 {
     $ch = curl_init($url);
@@ -17,4 +17,3 @@ function execPostRequest($url, $data)
     curl_close($ch);
     return $result;
 }
-?>
