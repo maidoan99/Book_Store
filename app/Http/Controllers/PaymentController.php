@@ -9,22 +9,18 @@ class PaymentController extends Controller
     public function createPayment()
     {
         $response = \MoMoAIO::purchase([
-            'accessKey' => '9aGYeOxLihzA2BNK',
-                'secretKey' => '271kUhDC2FZEyCSSoegfTY8MQNldnREQ',
-                'partnerCode' => 'MOMOQ8CB20191121',
             'amount' => 20000,
             'returnUrl' => 'https://bookstore-uet.herokuapp.com/home',
             'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
-            'orderId' => time(),
-            'requestId' => time(),
-            'orderInfo' => 'test thanh toan momo',
-            'extraData' => 'merchantName=Payment'
+            'orderId' => time() . " ",
+            'requestId' => time() . " ",
         ])->send();
         
         if ($response->isRedirect()) {
             $redirectUrl = $response->getRedirectUrl();
         } else{
-            echo $response->localMessage;
+            echo $response->localMessage . "\n";
+            echo $response->message;
         }
     }
 }
