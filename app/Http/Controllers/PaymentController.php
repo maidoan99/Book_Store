@@ -17,9 +17,10 @@ class PaymentController extends Controller
         ])->send();
         
         if ($response->isRedirect()) {
+            echo "tao yeu cau thnah toan thanh cong";
             $redirectUrl = $response->getRedirectUrl();
         } else{
-            echo $response->localMessage . "\n";
+            echo $response->localMessage . '\n';
             echo $response->message;
         }
     }
