@@ -9,11 +9,8 @@ class PaymentController extends Controller
     public function createPayment()
     {
         $response = \MoMoAIO::purchase([
-            'accessKey' => '9aGYeOxLihzA2BNK',
-            'secretKey' => '271kUhDC2FZEyCSSoegfTY8MQNldnREQ',
-            'partnerCode' => 'MOMOQ8CB20191121',
             'amount' => 20000,
-            'returnUrl' => 'https://bookstore-uet.herokuapp.com/thanh-toan-thanh-cong/',
+            'returnUrl' => 'https://bookstore-uet.herokuapp.com/home',
             'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
             'orderId' => time(),
             'requestId' => time(),
