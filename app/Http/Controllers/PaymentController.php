@@ -29,6 +29,6 @@ class PaymentController extends Controller
         //     echo $response->message;
         // }
 
-        return Config::get('laravel-ominipay.MoMoAIO.partnerCode');
+        echo Config::get('laravel-ominipay.MoMoAIO.partnerCode');
     }
 }
