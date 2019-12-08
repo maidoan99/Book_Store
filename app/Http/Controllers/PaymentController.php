@@ -20,9 +20,14 @@ class PaymentController extends Controller
         ])->send();
         
         if ($response->isRedirect()) {
+            echo "tao yeu cau thanh cong";
             $redirectUrl = $response->getRedirectUrl();
             
             // TODO: chuyển khách sang trang MoMo để thanh toán
+        } else{
+            echo $response->localMessage;
+            echo "<br>";
+            echo $response->message;
         }
     }
 }
