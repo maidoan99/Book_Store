@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function createPayment()
+    public function createPayment(Request $request)
     {
         $response = \MoMoAIO::purchase([
             'amount' => 20000,
@@ -19,6 +19,7 @@ class PaymentController extends Controller
         if ($response->isRedirect()) {
             echo "tao yeu cau thanh cong";
             $redirectUrl = $response->getRedirectUrl();
+            return redirect($redirectUrl);
             
             // TODO: chuyển khách sang trang MoMo để thanh toán
         } else{
