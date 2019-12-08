@@ -57,7 +57,7 @@ Route::get('contact', function(){
     return view('main.contact');
 })->name('contact');
 
-Route::resource('create_payment', 'PaymentController@createPayment');
+Route::post('create_payment', 'PaymentController@createPayment');
 
 /**
  * Route danh cho admin
