@@ -11,7 +11,7 @@ return [
                 'accessKey' => 'SvDmj2cOTYZmQQ3H',
                 'secretKey' => 'PPuDXq1KowPT1ftR8DvlQTHhC03aul17',
                 'partnerCode' => 'MOMOIQA420180417',
-                'testMode' => false,
+                'testMode' => true,
             ],
         ],
         'MoMoQRCode' => [
@@ -20,7 +20,7 @@ return [
                 'accessKey' => 'SvDmj2cOTYZmQQ3H',
                 'secretKey' => 'PPuDXq1KowPT1ftR8DvlQTHhC03aul17',
                 'partnerCode' => 'MOMOIQA420180417',
-                'testMode' => false,
+                'testMode' => true,
             ],
         ],
         'OnePayDomestic' => [
