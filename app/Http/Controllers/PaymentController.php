@@ -13,10 +13,7 @@ class PaymentController extends Controller
             'returnUrl' => 'https://bookstore-uet.herokuapp.com/thanh-toan-thanh-cong/',
             'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
             'orderId' => time(),
-            'requestId' => time(),
-            "partnerCode"=> "MOMOZQ6020190118",
-                "accessKey"=> "TKrL3r2CDhuPoFlZ",
-                "secretKey"=> "aeOpV10vSuXzX9XjjkEtXYrcY6WwwyJY",
+            'requestId' => time()
         ])->send();
         
         if ($response->isRedirect()) {
