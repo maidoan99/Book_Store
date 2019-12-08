@@ -8,9 +8,9 @@ return [
         'MoMoAIO' => [
             'driver' => 'MoMo_AllInOne',
             'options' => [
-                "partnerCode"=> "MOMOIQA420180417",
-                "accessKey"=> "Q8gbQHeDesB2Xs0t",
-                "secretKey"=> "PPuDXq1KowPT1ftR8DvlQTHhC03aul17",
+                "partnerCode"=> "",
+                "accessKey"=> "",
+                "secretKey"=> "",
                 'testMode' => false,
             ],
         ],
