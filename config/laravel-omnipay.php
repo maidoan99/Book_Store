@@ -23,26 +23,6 @@ return [
                 'testMode' => false,
             ],
         ],
-        'MoMoAIA' => [
-            'driver' => 'MoMo_AppInApp',
-            'options' => [
-                'accessKey' => '',
-                'secretKey' => '',
-                'partnerCode' => '',
-                'publicKey' => '',
-                'testMode' => false,
-            ],
-        ],
-        'MoMoPOS' => [
-            'driver' => 'MoMo_POS',
-            'options' => [
-                'accessKey' => '',
-                'secretKey' => '',
-                'partnerCode' => '',
-                'publicKey' => '',
-                'testMode' => false,
-            ],
-        ],
         'OnePayDomestic' => [
             'driver' => 'OnePay_Domestic',
             'options' => [
