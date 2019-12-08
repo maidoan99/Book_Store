@@ -8,18 +8,18 @@ return [
         'MoMoAIO' => [
             'driver' => 'MoMo_AllInOne',
             'options' => [
-                "partnerCode"=> "MOMOZQ6020190118",
-                "accessKey"=> "TKrL3r2CDhuPoFlZ",
-                "secretKey"=> "aeOpV10vSuXzX9XjjkEtXYrcY6WwwyJY",
+                "partnerCode"=> "MOMOIQA420180417",
+                "accessKey"=> "Q8gbQHeDesB2Xs0t",
+                "secretKey"=> "PPuDXq1KowPT1ftR8DvlQTHhC03aul17",
                 'testMode' => false,
             ],
         ],
         'MoMoQRCode' => [
             'driver' => 'MoMo_QRCode',
             'options' => [
-                "partnerCode"=> "MOMOZQ6020190118",
-                "accessKey"=> "TKrL3r2CDhuPoFlZ",
-                "secretKey"=> "aeOpV10vSuXzX9XjjkEtXYrcY6WwwyJY",
+                "partnerCode"=> "MOMOIQA420180417",
+                "accessKey"=> "Q8gbQHeDesB2Xs0t",
+                "secretKey"=> "PPuDXq1KowPT1ftR8DvlQTHhC03aul17",
                 'testMode' => false,
             ],
         ],
