@@ -14,6 +14,10 @@ class PaymentController extends Controller
             'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
             'orderId' => time() . " ",
             'requestId' => time() . " ",
+            "partnerCode"=> "MOMOQ8CB20191121",
+                "accessKey"=> "9aGYeOxLihzA2BNK",
+                "secretKey"=> "271kUhDC2FZEyCSSoegfTY8MQNldnREQ",
+                'testMode' => false,
         ])->send();
         
         if ($response->isRedirect()) {
