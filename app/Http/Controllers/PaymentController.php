@@ -9,12 +9,15 @@ class PaymentController extends Controller
 {
     public function createPayment(Request $request)
     {
-        $response = Config::get('laravel-ominipay.gateways.MoMoAIO')::purchase([
+        $response = \MoMoAIO::purchase([
             'amount' => 20000,
             'returnUrl' => 'https://bookstore-uet.herokuapp.com/thanh-toan-thanh-cong/',
             'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
             'orderId' => time(),
-            'requestId' => time()
+            'requestId' => time(),
+            "partnerCode"=> "MOMOIQA420180417",
+            "accessKey"=> "Q8gbQHeDesB2Xs0t",
+            "secretKey"=> "PPuDXq1KowPT1ftR8DvlQTHhC03aul17",
         ])->send();
         
         if ($response->isRedirect()) {
