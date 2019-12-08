@@ -14,7 +14,7 @@ class PaymentController extends Controller
             'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
             'orderId' => time(),
             'requestId' => time(),
-            'orderInfo' => 'test thnah toan momo',
+            'orderInfo' => 'test thanh toan momo',
             'extraData' => 'merchantName=Payment'
         ])->send();
         
@@ -22,6 +22,7 @@ class PaymentController extends Controller
             $redirectUrl = $response->getRedirectUrl();
         } else{
             echo $response->localMessage;
+            echo $response->status;
         }
     }
 }
