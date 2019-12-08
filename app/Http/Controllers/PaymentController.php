@@ -20,7 +20,8 @@ class PaymentController extends Controller
             echo "tao yeu cau thnah toan thanh cong";
             $redirectUrl = $response->getRedirectUrl();
         } else{
-            echo $response->localMessage . '\n';
+            echo $response->localMessage;
+            echo "<br>";
             echo $response->message;
         }
     }
