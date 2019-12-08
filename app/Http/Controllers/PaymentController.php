@@ -22,7 +22,6 @@ class PaymentController extends Controller
             $redirectUrl = $response->getRedirectUrl();
         } else{
             echo $response->localMessage;
-            echo $response->status;
         }
     }
 }
