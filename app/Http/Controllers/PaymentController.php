@@ -8,21 +8,18 @@ class PaymentController extends Controller
 {
     public function createPayment()
     {
-        // $response = \MoMoAIO::purchase([
-        //     'amount' => 20000,
-        //     'returnUrl' => 'https://bookstore-uet.herokuapp.com/thanh-toan-thanh-cong/',
-        //     'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
-        //     'orderId' => time(),
-        //     'requestId' => time(),
-        // ])->send();
+        $response = \MoMoAIO::purchase([
+            'amount' => 20000,
+            'returnUrl' => 'https://bookstore-uet.herokuapp.com/thanh-toan-thanh-cong/',
+            'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
+            'orderId' => time(),
+            'requestId' => time()
+        ])->send();
         
-        // if ($response->isRedirect()) {
-        //     $redirectUrl = $response->getRedirectUrl();
-        //     echo 'send thanh cong';
-        //     return view('main.create_payment');
-        // } else{
-        //     echo $response->message;
-        // }
-        return view('main.create_payment');
+        if ($response->isRedirect()) {
+            $redirectUrl = $response->getRedirectUrl();
+        } else{
+            echo $response->message;
+        }
     }
 }
