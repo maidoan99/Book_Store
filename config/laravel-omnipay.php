@@ -23,36 +23,6 @@ return [
                 'testMode' => false,
             ],
         ],
-        'OnePayDomestic' => [
-            'driver' => 'OnePay_Domestic',
-            'options' => [
-                'vpcMerchant' => '',
-                'vpcAccessCode' => '',
-                'vpcUser' => '',
-                'vpcPassword' => '',
-                'vpcHashKey' => '',
-                'testMode' => false,
-            ],
-        ],
-        'OnePayInternational' => [
-            'driver' => 'OnePay_International',
-            'options' => [
-                'vpcMerchant' => '',
-                'vpcAccessCode' => '',
-                'vpcUser' => '',
-                'vpcPassword' => '',
-                'vpcHashKey' => '',
-                'testMode' => false,
-            ],
-        ],
-        'VTCPay' => [
-            'driver' => 'VTCPay',
-            'options' => [
-                'websiteId' => '',
-                'securityCode' => '',
-                'testMode' => false,
-            ],
-        ],
         'VNPay' => [
             'driver' => 'VNPay',
             'options' => [
