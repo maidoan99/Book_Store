@@ -23,19 +23,7 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        $response = \MoMoAIO::purchase([
-            'amount' => 20000,
-            'returnUrl' => 'http://domaincuaban.com/thanh-toan-thanh-cong/',
-            'notifyUrl' => 'http://domaincuaban.com/ipn/',
-            'orderId' => 'Mã đơn hàng',
-            'requestId' => 'Mã request id, gợi ý nên xài uuid4',
-        ])->send();
         
-        if ($response->isRedirect()) {
-            $redirectUrl = $response->getRedirectUrl();
-            return redirect()->to($redirectUrl);
-            // TODO: chuyển khách sang trang MoMo để thanh toán
-        }
     }
 
     /**
@@ -46,7 +34,19 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $response = \MoMoAIO::purchase([
+            'amount' => 20000,
+            'returnUrl' => 'https://bookstore-uet.herokuapp.com/thanh-toan-thanh-cong/',
+            'notifyUrl' => 'https://bookstore-uet.herokuapp.com/ipn/',
+            'orderId' => time(),
+            'requestId' => time(),
+        ])->send();
+        
+        if ($response->isRedirect()) {
+            $redirectUrl = $response->getRedirectUrl();
+            return redirect()->to($redirectUrl);
+            // TODO: chuyển khách sang trang MoMo để thanh toán
+        }
     }
 
     /**
